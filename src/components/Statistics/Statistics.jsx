@@ -1,15 +1,29 @@
 import React from 'react';
+import css from './Statistics.module.css';
 
 const Statistics = ({ title, stats }) => {
-  return (
-    <section className="statistics">
-      {(!title ? null : <h2 className="title">{title}</h2>)}
+  const randomColor = () => {
+    let n = (Math.random() * 0xfffff * 1000000).toString(16);
+    return '#' + n.slice(0, 6);
+  };
 
-      <ul className="stat-list">
+  return (
+    <section className={css.statistics}>
+      {!title ? null : <h2 className={css.title}>{title}</h2>}
+
+      <ul className={css.statList}>
         {stats.map(({ id, label, percentage }) => (
-          <li key={id} className="item">
-            <span className="label">{label}</span>
-            <span className="percentage"> {percentage}%</span>
+          <li
+            key={id}
+            className={css.item}
+            style={{
+              borderRadius: 4,
+              backgroundColor: randomColor(),
+              color: 'white',
+            }}
+          >
+            <span className={css.label}>{label}</span>
+            <span className={css.percentage}> {percentage}%</span>
           </li>
         ))}
       </ul>
