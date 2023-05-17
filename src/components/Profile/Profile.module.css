@@ -1,0 +1,33 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: gainsboro;
+  width: 230px;
+  height: 300px;
+  border-radius: 5%;
+  border: 1px darkgray solid;
+  margin: 20px;
+}
+
+.avatar {
+  margin-top: 20px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.name{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.stats{
+    display: flex;
+    justify-content: space-around;
+}
+
+.label{
+    
+    font-size: small;
+}
