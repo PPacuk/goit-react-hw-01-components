@@ -1,16 +1,12 @@
 import React from 'react';
 import css from './Statistics.module.css';
 import PropTypes from 'prop-types';
+import randomColor from 'utils/randomColor';
 
 const Statistics = ({ title, stats }) => {
-  const randomColor = () => {
-    let n = (Math.random() * 0xfffff * 1000000).toString(16);
-    return '#' + n.slice(0, 6);
-  };
-
   return (
     <section className={css.statistics}>
-      {!title ? null : <h2 className={css.title}>{title}</h2>}
+      {title && <h2 className={css.title}>{title}</h2>}
 
       <ul className={css.statList}>
         {stats.map(({ id, label, percentage }) => (
